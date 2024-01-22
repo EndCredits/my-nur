@@ -6,9 +6,9 @@ in
 pkgs.buildFHSUserEnv (base // {
       name = "fhs";
       targetPkgs = pkgs: (
-        (base.targetPkgs pkgs) ++ with pkgs; [
-          pkg-config
-          ncurses
+        (base.targetPkgs pkgs) ++ [
+          pkgs.pkg-config
+          pkgs.ncurses
         ]
       );
       profile = "export FHS=1";
